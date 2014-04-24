@@ -16,7 +16,7 @@ gem 'devise'
 gem 'annotate', ">=2.5.0"
 gem 'pg'
 gem 'cancan'
-gem 'simple_form'
+gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 gem 'thin'
 group :development do
   gem 'better_errors'
