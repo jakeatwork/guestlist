@@ -1,4 +1,6 @@
 Guestlist::Application.routes.draw do
+  resources :guests_lists
+
   resources :types
 
   resources :guests
