@@ -1,4 +1,14 @@
 Guestlist::Application.routes.draw do
+  resources :types
+
+  resources :guests
+
+  resources :performers
+
+  resources :lists
+
+  resources :venues
+
   resources :events
 
   root :to => "home#index"
