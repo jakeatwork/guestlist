@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: guests
+#
+#  id         :integer          not null, primary key
+#  event_id   :string(255)
+#  type_id    :integer
+#  comments   :text
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
