@@ -12,7 +12,7 @@
 #
 
 class Event < ActiveRecord::Base
-	has_one :venue
+	belongs_to :venue
 	has_one :list
-	has_one :performer # needs to be has_many at some point
+	belongs_to :performer # needs to be has_many at some point
 end

@@ -4,8 +4,8 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :date %>
-    <%= f.input :venue_id %>
-    <%= f.input :performer_id %>
+    <%= f.association :venue %>
+    <%= f.association :performer %>
   </div>
 
   <div class="form-actions">
