@@ -11,4 +11,7 @@
 #
 
 class List < ActiveRecord::Base
+	belongs_to :event
+	belongs_to :venue
+	belongs_to :performer
 end
