@@ -5,10 +5,6 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.all
-    respond_to do |format|
-      format.html
-      format.json { render json: ClientsDatatable.new(view_context) }
-    end
   end
 
   # GET /lists/1
@@ -73,6 +69,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name, :venue_id, :event_id, :performer_id, :guest_id)
+      params.require(:list).permit(:name, :venue_id, :event_id, :performer_id)
     end
 end
