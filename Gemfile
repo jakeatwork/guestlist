@@ -13,7 +13,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'annotate', ">=2.5.0"
 gem 'pg'
-gem 'pundit'
+gem 'cancan'
 gem 'simple_form'
 gem 'thin'
 group :development do
