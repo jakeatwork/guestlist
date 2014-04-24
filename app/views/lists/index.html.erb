@@ -4,6 +4,7 @@
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th>List Name</th>
       <th>Venue</th>
       <th>Event</th>
       <th>Performer</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @lists.each do |list| %>
       <tr>
+        <td><%= list.name %></td>
         <td><%= list.venue.name %></td>
         <td><%= list.event.name %></td>
         <td><%= list.performer.name %></td>
