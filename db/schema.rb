@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20140424231602) do
     t.integer  "addons"
   end
 
-  create_table "guests_lists", force: true do |t|
+  create_table "guests_lists", id: false, force: true do |t|
     t.integer  "guest_id"
     t.integer  "list_id"
     t.datetime "created_at"
