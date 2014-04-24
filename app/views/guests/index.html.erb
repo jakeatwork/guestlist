@@ -4,6 +4,9 @@
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
       <th>Event</th>
       <th>Type</th>
       <th>Comments</th>
@@ -14,8 +17,10 @@
   <tbody>
     <% @guests.each do |guest| %>
       <tr>
-        <td><%= guest.event_id %></td>
-        <td><%= guest.type_id %></td>
+        <td><%= guest.name %></td>
+        <td><%= guest.email %></td>
+        <td><%= guest.phone %></td>
+        <td></td>
         <td><%= guest.comments %></td>
         <td><%= link_to 'Show', guest %></td>
         <td><%= link_to 'Edit', edit_guest_path(guest) %></td>

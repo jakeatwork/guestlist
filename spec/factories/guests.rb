@@ -8,6 +8,10 @@
 #  comments   :text
 #  created_at :datetime
 #  updated_at :datetime
+#  name       :string(255)
+#  email      :string(255)
+#  phone      :string(255)
+#  addons     :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

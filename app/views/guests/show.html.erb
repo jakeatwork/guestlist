@@ -1,13 +1,23 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Event:</strong>
-  <%= @guest.event_id %>
+  <strong>Name:</strong>
+  <%= @guest.name %>
 </p>
 
 <p>
-  <strong>Type:</strong>
-  <%= @guest.type_id %>
+  <strong>Email:</strong>
+  <%= @guest.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @guest.phone %>
+</p>
+<p>
+  <strong>Event:</strong>
+  <%= @guest.list %>
 </p>
 
 <p>
@@ -17,3 +27,4 @@
 
 <%= link_to 'Edit', edit_guest_path(@guest) %> |
 <%= link_to 'Back', guests_path %>
+</div>
