@@ -13,5 +13,6 @@
 class List < ActiveRecord::Base
 	belongs_to :event
 	belongs_to :venue
-	belongs_to :performer
+	belongs_to :performer 
+	has_many :guests
 end

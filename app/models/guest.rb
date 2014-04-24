@@ -11,6 +11,6 @@
 #
 
 class Guest < ActiveRecord::Base
-	has_many :lists
+	belongs_to :list
 	has_many :types
 end
