@@ -1,13 +1,15 @@
-<%= simple_form_for(@list) do |f| %>
-  <%= f.error_notification %>
+<form role="form">
+	<%= simple_form_for(@list) do |f| %>
+	  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.association :event %>
-    <%= f.association :venue %>
-    <%= f.association :performer %>
-  </div>
+	  <div class="form-inputs">
+	    <%= f.association :event %>
+	    <%= f.association :venue %>
+	    <%= f.association :performer %>
+	  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+	  <div class="form-actions">
+	    <%= f.button :submit %>
+	  </div>
+	<% end %>
+</form>
