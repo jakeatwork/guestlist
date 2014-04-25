@@ -5,7 +5,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Addons</th>
+      <th>+1s</th>
       <th>Type</th>
 
       <th>Comments</th>
@@ -19,7 +19,6 @@
         <td><%= guest.name %></td>
         <td>+<%= guest.addons %></td>
         <td><%= guest.type.name %></td>
-
         <td><%= guest.comments %></td>
         <td><%= link_to 'Show', guest %><br>
           <%= link_to 'Edit', edit_guest_path(guest) %><br>
