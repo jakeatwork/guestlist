@@ -18,9 +18,9 @@
 
 <p>
   <strong>Guests:</strong>
-  	<% @list.guests.each do |guest| %>
-  		<%= list.checklists.guest.name %>
-	<% end %>
+    <%= @list.guests.each do |guest| %>
+      <%= guest.name %>
+    <% end %>
 </p>
 
 
