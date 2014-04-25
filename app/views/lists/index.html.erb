@@ -8,7 +8,7 @@
       <th>Venue</th>
       <th>Event</th>
       <th>Performer</th>
-      <th colspan="3"></th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
 
@@ -19,6 +19,8 @@
         <td><%= list.venue.name %></td>
         <td><%= list.event.name %></td>
         <td><%= list.performer.name %></td>
+        <td><!-- THIS IS FOR TOUR MANAGERS ONLY -->
+        <%= link_to 'Add Guests to List', new_guest_path %></td>
         <td><%= link_to 'Show', list %></td>
         <td><%= link_to 'Edit', edit_list_path(list) %></td>
         <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
