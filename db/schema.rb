@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140425171407) do
+ActiveRecord::Schema.define(version: 20140425175643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,7 +40,6 @@ ActiveRecord::Schema.define(version: 20140425171407) do
   end
 
   create_table "guests", force: true do |t|
-    t.string   "list_id"
     t.integer  "type_id"
     t.text     "comments"
     t.datetime "created_at"

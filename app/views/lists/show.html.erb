@@ -1,19 +1,21 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
   <strong>Venue:</strong>
-  <%= @list.venue_id %>
+  <%= @list.venue.name %>
 </p>
 
 <p>
   <strong>Event:</strong>
-  <%= @list.event_id %>
+  <%= @list.event.name %>
 </p>
 
 <p>
   <strong>Performer:</strong>
-  <%= @list.performer_id %>
+  <%= @list.performer.name %>
 </p>
 
 <%= link_to 'Edit', edit_list_path(@list) %> |
 <%= link_to 'Back', lists_path %>
+</div>

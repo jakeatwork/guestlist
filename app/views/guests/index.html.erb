@@ -4,7 +4,7 @@
 <table class="table table-striped table-bordered table-condensed table-hover">
   <thead>
     <tr>
-      <th>Name / Email / Phone</th>
+      <th>Name</th>
       <th>Addons</th>
       <th>Type</th>
       <th>List</th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @guests.each do |guest| %>
       <tr>
-        <td><%= guest.name %> / <%= guest.email %> / <%= guest.phone %></td>
+        <td><%= guest.name %></td>
         <td>+<%= guest.addons %></td>
         <td><%= guest.type_id %>-
         <td><%= guest.list_id %></td>

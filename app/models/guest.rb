@@ -3,7 +3,6 @@
 # Table name: guests
 #
 #  id         :integer          not null, primary key
-#  list_id    :string(255)
 #  type_id    :integer
 #  comments   :text
 #  created_at :datetime
@@ -15,7 +14,7 @@
 #
 
 class Guest < ActiveRecord::Base
-	has_and_belongs_to_many :lists
+	has_many :lists, through: :checklists
 	belongs_to :type
 	resourcify
 end

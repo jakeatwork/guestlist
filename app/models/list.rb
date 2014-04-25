@@ -15,6 +15,6 @@ class List < ActiveRecord::Base
 	belongs_to :event
 	belongs_to :venue
 	belongs_to :performer 
-	has_and_belongs_to_many :guests
+	has_many :guests, through: :checklists
 	resourcify
 end
