@@ -15,8 +15,8 @@
     <% @guests.each do |guest| %>
       <tr>
         <td><%= guest.name %><br>
-            Note: <%= guest.comments %><br>
-            Type: <%= guest.type.name %>
+            <strong>Note:</strong> <%= guest.comments %><br>
+            <strong>Type:</strong> <%= guest.type.name %>
         </td>
         <td>+<%= guest.addons %></td>
 
