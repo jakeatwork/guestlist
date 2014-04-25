@@ -15,6 +15,7 @@
 
 class Guest < ActiveRecord::Base
 	has_many :lists, through: :checklists
+	has_many :checklists
 	belongs_to :type
 	resourcify
 end
