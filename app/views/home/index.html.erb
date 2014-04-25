@@ -13,4 +13,11 @@
 	</div>
 	<% end %>
 
+	<% if can? :manage, Guest %>
+	<div class="btn-group">
+		<%= button_to "Create New Guest", new_guest_path, :class => "btn btn-sm btn-primary", :method => :get %>
+
+			</div>
+	<% end %>
+
 </div>
