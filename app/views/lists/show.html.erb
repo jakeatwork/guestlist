@@ -18,8 +18,15 @@
 
 <p>
   <strong>Guests:</strong>
+
+
     <%= @list.guests.each do |guest| %>
-      <%= guest.name %>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> <%= guest.name %>
+    </label>
+    <br>
+  </div>
     <% end %>
 </p>
 
