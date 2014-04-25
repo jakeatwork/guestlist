@@ -1,23 +1,16 @@
 <div class="container">
-	<h3>What would you like to do?</h3>
-
-
-
-	<% if can? :manage, List %>
+	<h3><% if user_signed_in? %><%= @user.name %>, <% end %>What would you like to do?</h3>
 	<div class="btn-group">
+		<% if can? :manage, List %>
 		<%= button_to "Create New List", new_list_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<br>
 		<%= button_to "View Lists", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<br>
 		<%= button_to "Check In Guests", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
-	</div>
-	<% end %>
-
+		<% end %>
+		<br>
 	<% if can? :manage, Guest %>
-	<div class="btn-group">
 		<%= button_to "Create New Guest", new_guest_path, :class => "btn btn-sm btn-primary", :method => :get %>
-
-			</div>
 	<% end %>
-
+	</div>
 </div>
