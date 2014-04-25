@@ -16,7 +16,6 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #  name                   :string(255)
-#  role                   :integer
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
