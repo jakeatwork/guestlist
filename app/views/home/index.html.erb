@@ -9,8 +9,12 @@
 		<%= button_to "Check In Guests", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<% end %>
 		<br>
+
+<!-- TOUR MANAGER STUFF BELOW -->
+
+
 	<% if can? :manage, Guest %>
-		<%= button_to "Create New Guest", new_guest_path, :class => "btn btn-sm btn-primary", :method => :get %>
+		<%= button_to "View Lists", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
 	<% end %>
 	</div>
 </div>

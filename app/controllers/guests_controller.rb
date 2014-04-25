@@ -2,6 +2,7 @@ class GuestsController < ApplicationController
   before_filter :authenticate_user!
   before_action :set_guest, only: [:show, :edit, :update, :destroy]
 
+
   # GET /guests
   # GET /guests.json
   def index
@@ -70,6 +71,6 @@ class GuestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def guest_params
-      params.require(:guest).permit(:phone, :email, :list_id, :type_id, :comments, :addons, :name)
+      params.require(:guest).permit(:phone, :email, :list_id, :type_id, :comments, :addons, :name, :list)
     end
 end
