@@ -1,12 +1,16 @@
 <%# add navigation links to this file %>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+
+  <% if can? :manage, :all %>
   <li><%= link_to 'Events', events_path %></li>
   <li><%= link_to 'Venues', venues_path %></li>
   <li><%= link_to 'Performers', performers_path %></li>
-  <li><%= link_to 'Guests', guests_path %></li>
   <li><%= link_to 'Types', types_path %></li>
   <li><%= link_to 'Guestlists', guests_lists_path %></li>
+  <% end %>
+
+  <li><%= link_to 'Guests', guests_path %></li>
   <li><%= link_to 'Lists', lists_path %></li>
   <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>

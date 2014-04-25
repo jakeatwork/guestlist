@@ -3,7 +3,7 @@
 
 
 
-	<% if can? :view, @list %>
+	<% if can? :manage, List %>
 	<div class="btn-group">
 		<%= button_to "Create New List", new_list_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<br>
@@ -12,5 +12,5 @@
 		<%= button_to "Check In Guests", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
 	</div>
 	<% end %>
-	<!-- Ideally the button group should change based on role -->
+
 </div>
