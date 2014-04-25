@@ -6,7 +6,6 @@
     <tr>
       <th>Name</th>
       <th>+1s</th>
-      <th>Type</th>
 
       <th colspan="1">Actions</th>
     </tr>
@@ -16,10 +15,11 @@
     <% @guests.each do |guest| %>
       <tr>
         <td><%= guest.name %><br>
-            <%= guest.comments %>
+            Note: <%= guest.comments %><br>
+            Type: <%= guest.type.name %>
         </td>
         <td>+<%= guest.addons %></td>
-        <td><%= guest.type.name %></td>
+
 
         <td><%= link_to 'Show', guest %><br>
           <%= link_to 'Edit', edit_guest_path(guest) %><br>
