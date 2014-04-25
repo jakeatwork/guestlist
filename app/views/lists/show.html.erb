@@ -1,5 +1,6 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+
+<h1><%= @list.name %></h1>
 
 <p>
   <strong>Venue:</strong>
@@ -23,7 +24,7 @@
     <%= @list.guests.each do |guest| %>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> <%= guest.name %>
+      <h4><input type="checkbox"> <%= guest.name %> +<%= guest.addons %></h4>
     </label>
     <br>
   </div>
