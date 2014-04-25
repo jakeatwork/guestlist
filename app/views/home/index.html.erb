@@ -1,5 +1,9 @@
 <div class="container">
 	<h3>What would you like to do?</h3>
+
+
+
+	<% if can? :view, @list %>
 	<div class="btn-group">
 		<%= button_to "Create New List", new_list_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<br>
@@ -7,5 +11,6 @@
 		<br>
 		<%= button_to "Check In Guests", lists_path, :class => "btn btn-sm btn-primary", :method => :get %>
 	</div>
+	<% end %>
 	<!-- Ideally the button group should change based on role -->
 </div>

@@ -1,5 +1,6 @@
 class GuestsListsController < ApplicationController
   before_action :set_guests_list, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /guests_lists
   # GET /guests_lists.json
