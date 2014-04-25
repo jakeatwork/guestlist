@@ -24,7 +24,7 @@
     <%= @list.guests.each do |guest| %>
   <div class="checkbox">
     <label>
-      <h4><input type="checkbox"> <%= guest.name %> +<%= guest.addons %></h4>
+      <h4><input type="checkbox"> <%= guest.name %> +<%= guest.addons %> - <%= guest.type.name %></h4>
     </label>
     <br>
   </div>
