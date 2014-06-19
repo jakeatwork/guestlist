@@ -1,3 +1,12 @@
+<!-- ALL FACEBOOK FANS WILL SEE THE STUFF BELOW -->
+<% if user_signed_in? %>
+<% if cannot? :manage, [Guest, List]  %>
+<div class="container">
+<h3>Hi. I'm a Facebook user</h3>
+
+<% end %>
+</div>
+<% end %>
 
 
 <!-- VENUE/EVENT MANAGER STUFF BELOW -->
