@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 gem 'rails_12factor'
 gem 'rolify'
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'annotate', ">=2.5.0"
 gem 'pg'
 gem 'cancan'
