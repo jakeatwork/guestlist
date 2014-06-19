@@ -1,5 +1,53 @@
 <div class="container">
 <h1>Guests</h1>
+
+
+<%= form_tag guests_path, method: :get do %>
+  <p>
+    <%= text_field_tag :query, params[:query] %>
+    <%= submit_tag "Search", name: nil %>
+  </p>
+<% end %>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Source</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.provider %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+
+
 <div class="table-responsive">
 <table class="table table-striped table-bordered table-condensed table-hover">
   <thead>
@@ -16,7 +64,6 @@
       <tr>
         <td><%= guest.name %><br>
             <strong>Note:</strong> <%= guest.comments %><br>
-            <strong>Type:</strong> <%= guest.type.name %>
         </td>
         <td>+<%= guest.addons %></td>
 
