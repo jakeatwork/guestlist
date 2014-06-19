@@ -14,6 +14,7 @@ gem 'rails_12factor'
 gem 'rolify'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'koala', "~> 1.10.0rc"
 gem 'annotate', ">=2.5.0"
 gem 'pg'
 gem 'cancan'

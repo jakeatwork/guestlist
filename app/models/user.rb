@@ -33,12 +33,24 @@ class User < ActiveRecord::Base
   #   self.role ||= :user
   # end
 
+  def facebook
+    @facebook ||= Koala::Facebook::API.new(oauth_token)
+    block_given? ? yield(@facebook) : @facebook
+  rescue Koala::Facebook::APIError
+    logger.info e.to_s
+    nil
+  end
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       # user.username = auth.info.nickname
     end
+  end
+
+  def picture
+    @picture = facebook.get_picture("me")
   end
 
   def self.new_with_session(params, session)
