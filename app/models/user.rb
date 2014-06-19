@@ -47,12 +47,19 @@ class User < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
       # user.username = auth.info.nickname
     end
   end
 
   def picture
     @picture = facebook.get_picture("me")
+  end
+
+  def profile
+    @profile = facebook.get_object("me")
   end
 
   def self.new_with_session(params, session)
