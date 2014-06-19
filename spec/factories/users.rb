@@ -18,6 +18,8 @@
 #  name                   :string(255)
 #  provider               :string(255)
 #  uid                    :string(255)
+#  oauth_token            :string(255)
+#  oauth_expires_at       :datetime
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
