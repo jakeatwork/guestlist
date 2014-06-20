@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @users = User.where(:provider => "facebook")
+    @lists = List.all
   end
 
   def show
