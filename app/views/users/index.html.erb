@@ -42,8 +42,14 @@
                   </div>
                   <div class="modal-body">
                     <% @lists.each do |list| %>
-
-                      <div><%= list.name %></div>
+                      <table class="table table-striped table-hover">
+                      <tr>
+                      <td>
+                      <%= check_box("post", "validated") %>
+                      <%= list.name %></div>
+                      </td>
+                      </tr>
+                      </table>
                     <% end %>
                   </div>
                   <div class="modal-footer">
