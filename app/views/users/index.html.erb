@@ -23,7 +23,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><img src="<%= current_user.picture %>" style="float: left;margin: 5px;"></td>
+        <td><img src="<%= user.picture %>" style="float: left;margin: 5px;"></td>
         <td><%= user.name %></td>
         <td><%= user.provider %></td>
       </tr>
