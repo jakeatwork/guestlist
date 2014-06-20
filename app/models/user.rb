@@ -20,6 +20,7 @@
 #  uid                    :string(255)
 #  oauth_token            :string(255)
 #  oauth_expires_at       :datetime
+#  photo                  :string(255)
 #
 
 class User < ActiveRecord::Base
