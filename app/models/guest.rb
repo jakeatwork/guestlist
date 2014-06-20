@@ -14,8 +14,20 @@
 #
 
 class Guest < ActiveRecord::Base
+
 	has_many :lists, through: :checklists
 	has_many :checklists
 	belongs_to :type
 	resourcify
+
+  include PgSearch
+  pg_search_scope :search, against: [:name, :content]
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
+  end
 end

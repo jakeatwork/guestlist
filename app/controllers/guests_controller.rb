@@ -6,8 +6,8 @@ class GuestsController < ApplicationController
   # GET /guests
   # GET /guests.json
   def index
-    @guests = Guest.all
-    @users = User.all
+    @guests = Guest.text_search(params[:query]).page(params[:page]).per_page(10)
+    # @users = User.text_search(params[:query]).page(params[:page]).per_page(10)
   end
 
   # GET /guests/1

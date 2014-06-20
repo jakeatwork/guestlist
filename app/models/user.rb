@@ -23,16 +23,32 @@
 #
 
 class User < ActiveRecord::Base
+
+  include PgSearch
+  pg_search_scope :search, against: :name
+
+  def self.text_search(query)
+    if query.present?
+      search(query)
+    else
+      all
+    end
+  end
+
   rolify
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-  # enum role: [:user, :vip, :admin]
-  # after_initialize :set_default_role, :if => :new_record?
 
-  # def set_default_role
-  #   self.role ||= :user
+
+  # pg_search_scope :search, :against => :name
+
+  # def self.text_search(query)
+  #   if query.present?
+  #     search(query)
+  #   else
+  #     scoped
+  #   end
   # end
 
   def facebook
@@ -52,7 +68,6 @@ class User < ActiveRecord::Base
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
-      # user.username = auth.info.nickname
     end
   end
 

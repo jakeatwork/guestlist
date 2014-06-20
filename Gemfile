@@ -17,9 +17,10 @@ gem 'omniauth-facebook'
 gem 'koala', "~> 1.10.0rc"
 gem 'annotate', ">=2.5.0"
 gem 'pg'
+gem 'pg_search'
 gem 'cancan'
 gem 'will_paginate'
-gem 'pg_search'
+gem 'textacular', '~> 3.0'
 gem 'simple_form', '~> 3.1.0.rc1', github: 'plataformatec/simple_form'
 gem 'thin'
 group :development do
