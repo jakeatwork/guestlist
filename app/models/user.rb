@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
     if query.present?
       search(query)
     else
-      all
+      scope
     end
   end
 
