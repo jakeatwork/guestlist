@@ -16,6 +16,6 @@ class List < ActiveRecord::Base
 	belongs_to :venue
 	has_many :checklists
 	belongs_to :performer 
-	has_many :guests, through: :checklists
+	has_many :users, through: :checklists
 	resourcify
 end
