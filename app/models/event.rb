@@ -12,7 +12,8 @@
 #
 
 class Event < ActiveRecord::Base
-	has_one :venue
+	belongs_to :venue
+	belongs_to :performer
 	has_many :users, through: :lists
 	has_many :lists
 	has_many :performers # needs to be has_many at some point
