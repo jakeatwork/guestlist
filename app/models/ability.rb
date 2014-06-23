@@ -8,7 +8,7 @@ class Ability
     elsif user.has_role? :venue
         can :manage, List
     elsif user.has_role? :band
-        can :manage, Guest
+        can :manage, User
     can :read, :all
     end
 
