@@ -2,13 +2,14 @@
 #
 # Table name: lists
 #
-#  id           :integer          not null, primary key
-#  venue_id     :integer
-#  event_id     :integer
-#  performer_id :integer
-#  created_at   :datetime
-#  updated_at   :datetime
-#  name         :string(255)
+#  id               :integer          not null, primary key
+#  event_id         :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#  user_id          :integer
+#  type_id          :integer
+#  number_of_guests :integer
+#  checked_in       :boolean
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

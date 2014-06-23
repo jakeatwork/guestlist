@@ -11,17 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140620181721) do
+ActiveRecord::Schema.define(version: 20140623223558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "checklists", id: false, force: true do |t|
-    t.integer  "user_id"
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "events", force: true do |t|
     t.string   "name"
@@ -32,31 +25,14 @@ ActiveRecord::Schema.define(version: 20140620181721) do
     t.datetime "updated_at"
   end
 
-  create_table "guestlists", id: false, force: true do |t|
-    t.integer  "guest_id"
-    t.integer  "list_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "guests", force: true do |t|
-    t.integer  "type_id"
-    t.text     "comments"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
-    t.string   "email"
-    t.string   "phone"
-    t.integer  "addons"
-  end
-
   create_table "lists", force: true do |t|
-    t.integer  "venue_id"
     t.integer  "event_id"
-    t.integer  "performer_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "type_id"
+    t.integer  "number_of_guests"
+    t.boolean  "checked_in"
   end
 
   create_table "performers", force: true do |t|
