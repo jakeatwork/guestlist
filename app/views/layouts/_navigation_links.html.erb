@@ -15,6 +15,13 @@
       
       <li><%= link_to 'Lists', lists_path %></li>
       <% end %>
+        <% if can? :manage, :all %>
+  <% if user_signed_in? %>
+    <li><%= link_to 'Guests', users_path %></li>
+  <% end %>
+<% end %>
+
+
     <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
   <% else %>
     <li><%= link_to 'Login', new_user_session_path %></li>
@@ -22,8 +29,4 @@
     <li><%= link_to 'Sign in with Facebook', user_omniauth_authorize_path(:facebook) %>
   <% end %>
   
-  <% if can? :manage, :all %>
-  <% if user_signed_in? %>
-    <li><%= link_to 'Guests', users_path %></li>
-  <% end %>
-<% end %>
+
