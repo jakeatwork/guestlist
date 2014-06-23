@@ -14,6 +14,7 @@
 
 class List < ActiveRecord::Base
 	belongs_to :event
-	has_many :users
+	belongs_to :user
+	has_many :types
 	resourcify
 end
