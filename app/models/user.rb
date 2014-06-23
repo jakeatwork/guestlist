@@ -25,8 +25,8 @@
 
 class User < ActiveRecord::Base
 
-  has_many :lists, through: :checklists
-  has_many :checklists
+  has_many :events, through: :lists
+  has_many :lists
 
   include PgSearch
   pg_search_scope :search, against: :name
