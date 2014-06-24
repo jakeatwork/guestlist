@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @eventguest.event_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @eventguest.user_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @eventguest.type_id %>
+</p>
+
+<p>
+  <strong>Extras:</strong>
+  <%= @eventguest.extras %>
+</p>
+
+<p>
+  <strong>Attended:</strong>
+  <%= @eventguest.attended %>
+</p>
+
+<%= link_to 'Edit', edit_eventguest_path(@eventguest) %> |
+<%= link_to 'Back', eventguests_path %>

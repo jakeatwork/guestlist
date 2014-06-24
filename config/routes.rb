@@ -1,4 +1,6 @@
 Guestlist::Application.routes.draw do
+  resources :eventguests
+
   resources :types
 
   resources :performers
