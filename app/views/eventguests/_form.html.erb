@@ -3,8 +3,14 @@
 
   <div class="form-inputs">
     <%= f.text_field :event_id, :value => params[:event_id] %>
+    <%= f.text_field :user_id, :value => params[:user_id] %>
+
+<br>
+
     <%= f.input :event_id, :value => params[:event_id] %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :user_id, :value => params[:user_id], label: 'Guest' %>
+    <% # <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :business_user, value: current_user.id %>
     <%= f.association :type, hint: 'VIP, GA, etc...' %>
     <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>
     <%= f.input :attended %>
