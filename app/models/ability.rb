@@ -6,7 +6,7 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :venue
-        can :manage, List
+        can :manage, Eventguest
     elsif user.has_role? :band
         can :manage, User
     can :read, :all
