@@ -1,5 +1,6 @@
 class EventguestsController < ApplicationController
   before_action :set_eventguest, only: [:show, :edit, :update, :destroy]
+  helper_method :user_signed_in?
 
   # GET /eventguests
   # GET /eventguests.json
@@ -15,6 +16,7 @@ class EventguestsController < ApplicationController
   # GET /eventguests/new
   def new
     @eventguest = Eventguest.new
+    @business_user = current_user.id if current_user
   end
 
   # GET /eventguests/1/edit
