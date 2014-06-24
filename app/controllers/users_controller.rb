@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     # @users = User.all
     @users = User.where(:provider => "facebook")
-    @eventguests = Eventguest.all
+    @events = Event.all
   end
 
   def show
