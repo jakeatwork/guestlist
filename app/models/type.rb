@@ -9,5 +9,5 @@
 #
 
 class Type < ActiveRecord::Base
-	belongs_to :list
+	has_many :eventguests
 end

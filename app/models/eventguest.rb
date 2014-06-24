@@ -15,6 +15,6 @@
 class Eventguest < ActiveRecord::Base
 	belongs_to :event
 	belongs_to :user
-	has_many :types
+	belongs_to :type
 	resourcify
 end
