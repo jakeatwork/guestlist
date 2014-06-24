@@ -16,10 +16,10 @@
   <tbody>
     <% @eventguests.each do |eventguest| %>
       <tr>
-        <td><%= eventguest.event_id %></td>
+        <td><%= eventguest.event.name %></td>
         <td><%= eventguest.user_id %></td>
-        <td><%= eventguest.type_id %></td>
-        <td><%= eventguest.extras %></td>
+        <td><%= eventguest.type.name %></td>
+        <td>+<%= eventguest.extras %></td>
         <td><%= eventguest.attended %></td>
         <td><%= link_to 'Show', eventguest %></td>
         <td><%= link_to 'Edit', edit_eventguest_path(eventguest) %></td>

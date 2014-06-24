@@ -2,10 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :event %>
-    <%= f.association :user %>
-    <%= f.association :type %>
-    <%= f.input :extras %>
+    <%= f.association :event, :value => params[:event_id] %>
+    <% # <%= f.association :user, :value => selected_user as: :hidden %>
+    <%= f.association :type, hint: 'VIP, GA, etc...' %>
+    <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>
     <%= f.input :attended %>
   </div>
 
