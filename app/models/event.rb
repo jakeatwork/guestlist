@@ -14,7 +14,7 @@
 class Event < ActiveRecord::Base
 	belongs_to :venue
 	belongs_to :performer
-	has_many :users, through: :lists
-	has_many :lists
+	has_many :users, through: :eventguests
+	has_many :eventguests
 	has_many :performers 
 end

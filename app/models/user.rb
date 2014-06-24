@@ -25,8 +25,8 @@
 
 class User < ActiveRecord::Base
 
-  has_many :events, through: :lists
-  has_many :lists
+  has_many :events, through: :eventguests
+  has_many :eventguests
 
   include PgSearch
   pg_search_scope :search, against: :name
