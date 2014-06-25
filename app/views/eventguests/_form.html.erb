@@ -1,16 +1,20 @@
+<% # <% event_name = params[:event_id] %>
+
 <%= simple_form_for(@eventguest) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.text_field :event_id, :value => params[:event_id] %>
-    <%= f.text_field :user_id, :value => params[:user_id] %>
+    <div class="form-inputs">
+    <%= f.label :event_id %>
+    <%= f.text_field :event_id, :value => params[:event_id] %><br><br>
+    <%= f.label :user_id%>
+    <%= f.text_field :user_id, :value => params[:user_id] %><br><br>
+    <%= f.label :business_user %>
+    <%= f.text_field :business_user, value: current_user.id %><br><br>
 
-<br>
-
-    <%= f.input :event_id, :value => params[:event_id] %>
-    <%= f.input :user_id, :value => params[:user_id], label: 'Guest' %>
-    <% # <%= f.hidden_field :user_id, value: current_user.id %>
-    <%= f.input :business_user, value: current_user.id %>
+    <% # <%= f.association :event, :value => params[:event_id] %>
+    <% # <%= f.input :event_id, :value => params[:event_id], label: 'Event' %>
+    <% # <%= f.input :user_id, :value => params[:user_id], label: 'Event Guest' %>
+    
     <%= f.association :type, hint: 'VIP, GA, etc...' %>
     <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>
     <%= f.input :attended %>
