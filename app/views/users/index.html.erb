@@ -26,22 +26,12 @@
         <td><%= user.provider %></td>
         <td>
           
-          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+          <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#<%= user.name.delete(' ') %>">
             Add <%= user.name %> to an Event
           </button>
 
-
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
-
-
-<% @users.each do |user| %>
          <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal fade" id="<%= user.name.delete(' ') %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -70,5 +60,10 @@
                 </div>
               </div>
             </div>
-            <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
 
