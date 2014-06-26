@@ -17,6 +17,8 @@ class EventguestsController < ApplicationController
   def new
     @eventguest = Eventguest.new
     @business_user = current_user.id if current_user
+    @event_name = Event.find(params[:event_id]).name
+    @guest_name = User.find(params[:user_id]).name
   end
 
   # GET /eventguests/1/edit
