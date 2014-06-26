@@ -1,3 +1,4 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -20,5 +21,14 @@
   <%= @event.performer_id %>
 </p>
 
+<table class="table table-striped table-hover">
+ <% @guests.each do |eventguest| %>
+      <tr>
+        <td><%= eventguest.user.name %></td>
+      </tr>
+      <% end %>
+</table>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+</div>
