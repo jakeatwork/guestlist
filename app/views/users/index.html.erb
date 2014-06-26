@@ -27,9 +27,19 @@
         <td>
           
           <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-            Add Guest to Event <%= user.name %>
+            Add <%= user.name %> to an Event
           </button>
 
+
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+
+<% @users.each do |user| %>
          <!-- Modal -->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
               <div class="modal-dialog">
@@ -60,10 +70,5 @@
                 </div>
               </div>
             </div>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+            <% end %>
 
