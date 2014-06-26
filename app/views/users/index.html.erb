@@ -42,11 +42,11 @@
                   <div class="modal-body">
                   <table class="table table-striped table-hover">
                   <!-- figure out how to get this to save to the guestlist table -->
-                  <%= user.name %>
+                  
                     <% @events.each do |event| %>
                       <tr>
                         <td>
-                          <%= link_to "Add guest to event", new_eventguest_path({:event_id => event.id, :user_id => user.id}), :class => "btn btn-primary btn-sm" %>
+                          <%= link_to "Add to event", new_eventguest_path({:event_id => event.id, :user_id => user.id}), :class => "btn btn-primary btn-sm" %>
                           <%= event.name %>
                         </td>
                       </tr>
