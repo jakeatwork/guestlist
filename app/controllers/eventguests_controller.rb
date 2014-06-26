@@ -19,6 +19,8 @@ class EventguestsController < ApplicationController
     @business_user = current_user.id if current_user
     @event_name = Event.find(params[:event_id]).name
     @guest_name = User.find(params[:user_id]).name
+    @event_date = Event.find(params[:event_id]).date
+    # @guest_photo = facebook.get_picture(@guest_name)
   end
 
   # GET /eventguests/1/edit

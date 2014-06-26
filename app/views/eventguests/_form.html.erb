@@ -1,8 +1,10 @@
-<% # <% event_name = params[:event_id] %>
+<h4>Event:<br>
+  <strong><%= @event_name %></strong> on <%= @event_date %><br><br>
+  Guest Name:<br>
+  <strong><%= @guest_name %><%= @guest_photo %></strong><br><br>
+</h4>
 
-Event: <%= @event_name %><br>
-Guest Name: <%= @guest_name %><br><br>
-
+<% #TODO: make sure that the venue is listed on the new eventguest page; if the venue isn't in the event name, then it is missing some key information for tour managers as they add guests %>
 
 <%= simple_form_for(@eventguest) do |f| %>
   <%= f.error_notification %>
@@ -11,11 +13,6 @@ Guest Name: <%= @guest_name %><br><br>
     <%= f.hidden_field :event_id, :value => params[:event_id] %>
     <%= f.hidden_field :user_id, :value => params[:user_id] %>
     <%= f.hidden_field :business_user, value: current_user.id %>
-
-    <% # <%= f.association :event, :value => params[:event_id] %>
-    <% # <%= f.input :event_id, :value => params[:event_id], label: 'Event' %>
-    <% # <%= f.input :user_id, :value => params[:user_id], label: 'Event Guest' %>
-    
     <%= f.association :type, hint: 'VIP, GA, etc...' %>
     <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>
     <%= f.input :attended %>
