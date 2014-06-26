@@ -1,4 +1,6 @@
 Guestlist::Application.routes.draw do
+  resources :time_zones
+
   resources :eventguests
 
   resources :types
