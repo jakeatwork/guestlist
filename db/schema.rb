@@ -63,13 +63,6 @@ ActiveRecord::Schema.define(version: 20140626203045) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
-  create_table "time_zones", force: true do |t|
-    t.string   "name"
-    t.text     "location"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "types", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
