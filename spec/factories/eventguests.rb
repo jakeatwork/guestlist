@@ -11,6 +11,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  business_user :integer
+#  notes         :text
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

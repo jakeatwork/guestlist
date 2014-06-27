@@ -11,6 +11,7 @@
 #  created_at    :datetime
 #  updated_at    :datetime
 #  business_user :integer
+#  notes         :text
 #
 
 require 'spec_helper'

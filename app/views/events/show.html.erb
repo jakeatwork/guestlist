@@ -22,9 +22,10 @@
 </p>
 
 <table class="table table-striped table-hover">
+<th>Guests:</th>
  <% @guests.each do |eventguest| %>
       <tr>
-        <td><%= eventguest.user.name %></td>
+        <td><%= eventguest.user.name %> +<%= eventguest.extras %> - <%= eventguest.type.name %></td>
       </tr>
       <% end %>
 </table>
