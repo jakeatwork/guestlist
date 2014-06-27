@@ -6,6 +6,7 @@ class EventguestsController < ApplicationController
   # GET /eventguests.json
   def index
     @eventguests = Eventguest.all
+    @events = Event.all
   end
 
   # GET /eventguests/1
@@ -15,7 +16,7 @@ class EventguestsController < ApplicationController
 
   # GET /eventguests/new
   def new
-    @eventguest = Eventguest.new
+    @eventguest = Eventguest.new(party_params)
     @business_user = current_user.id if current_user
     @event_name = Event.find(params[:event_id]).name
     @guest_name = User.find(params[:user_id]).name
@@ -25,12 +26,13 @@ class EventguestsController < ApplicationController
 
   # GET /eventguests/1/edit
   def edit
+    @eventguest = Eventguest.find(params[:id])
   end
 
   # POST /eventguests
   # POST /eventguests.json
   def create
-    @eventguest = Eventguest.new(eventguest_params)
+    @eventguest = Eventguest.new(secondary_params)
 
     respond_to do |format|
       if @eventguest.save
@@ -76,5 +78,9 @@ class EventguestsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def eventguest_params
       params.require(:eventguest).permit(:event_id, :user_id, :type_id, :extras, :attended)
+    end
+
+    def secondary_params
+      params.permit(:event_id, :user_id)
     end
 end

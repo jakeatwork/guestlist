@@ -22,12 +22,14 @@
 </p>
 
 <table class="table table-striped table-hover">
-<th>Guests:</th>
+<thead><strong>Guests:</strong></thead>
+<tbody>
  <% @guests.each do |eventguest| %>
       <tr>
-        <td><%= eventguest.user.name %> +<%= eventguest.extras %> - <%= eventguest.type.name %></td>
+        <td><strong><%= eventguest.user.name %></strong> +<%= eventguest.extras %> - <%= eventguest.type.name %> - <strong>Notes:</strong> <%= eventguest.notes %></td>
       </tr>
       <% end %>
+      </tbody>
 </table>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

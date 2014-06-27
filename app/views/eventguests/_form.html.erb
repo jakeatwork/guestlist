@@ -1,10 +1,12 @@
 <h4>Event:<br>
-  <strong><%= @event_name %></strong> on <%= @event_date %><br><br>
+  <strong><%= @eventguest.event.name %></strong> on <%= @eventguest.event.date %><br><br>
   Guest Name:<br>
-  <strong><%= @guest_name %><%= @guest_photo %></strong><br><br>
+  <strong><%= @eventguest.user.name %><%= @guest_photo %></strong><br><br>
 </h4>
 
 <% #TODO: make sure that the venue is listed on the new eventguest page; if the venue isn't in the event name, then it is missing some key information for tour managers as they add guests %>
+
+<% #TODO: make sure values aren't set through the URL in the future: http://stackoverflow.com/questions/24416087/rails-4-simple-form-and-pre-populating-fields-from-url %>
 
 <%= simple_form_for(@eventguest) do |f| %>
   <%= f.error_notification %>

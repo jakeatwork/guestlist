@@ -17,7 +17,7 @@
     <% @eventguests.each do |eventguest| %>
       <tr>
         <td><%= eventguest.event.name %></td>
-        <td><%= eventguest.user_id %></td>
+        <td><%= eventguest.user.name %></td>
         <td><%= eventguest.type.name %></td>
         <td>+<%= eventguest.extras %></td>
         <td><%= eventguest.attended %></td>
