@@ -10,7 +10,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @guests = Eventguest.find.where(event_id = event_params)
+    # @guests = Event.find(@event.id = params[:id])
+    # @public_content = Content.where(anonymous: "f")
+    @guests = Eventguest.find(@event.id = params[:id])
   end
 
   # GET /events/new

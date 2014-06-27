@@ -1,4 +1,4 @@
-<div class="container">
+ <div class="container">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -13,12 +13,12 @@
 
 <p>
   <strong>Venue:</strong>
-  <%= @event.venue_id %>
+  <%= @event.venue.name %>
 </p>
 
 <p>
   <strong>Performer:</strong>
-  <%= @event.performer_id %>
+  <%= @event.performer.name %>
 </p>
 
 <table class="table table-striped table-hover">
