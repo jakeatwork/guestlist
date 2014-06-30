@@ -17,6 +17,7 @@
     <%= f.hidden_field :business_user, value: current_user.id %>
     <%= f.association :type, hint: 'VIP, GA, etc...' %>
     <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>
+    <%= f.input :notes %>
     <%= f.input :attended %>
   </div>
 

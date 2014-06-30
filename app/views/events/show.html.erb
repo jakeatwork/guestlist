@@ -26,7 +26,7 @@
 <tbody>
  <% @guests.each do |eventguest| %>
       <tr>
-        <td><strong><%= eventguest.user.name %></strong> +<%= eventguest.extras %> - <%= eventguest.type.name %> - <strong>Notes:</strong> <%= eventguest.notes %></td>
+        <td><%= check_box "eventguest", "attended", {:checked => eventguest.attended, :disabled => false } %>  <strong><%= eventguest.user.name %></strong> +<%= eventguest.extras %> - <%= eventguest.type.name %> - <strong>Notes:</strong> <%= eventguest.notes %></td>
       </tr>
       <% end %>
       </tbody>
