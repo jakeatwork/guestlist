@@ -12,11 +12,13 @@ class EventguestsController < ApplicationController
   # GET /eventguests/1
   # GET /eventguests/1.json
   def show
+    @eventguest = Eventguest.find(params[:id])
   end
 
   # GET /eventguests/new
   def new
-    @eventguest = Eventguest.new(party_params)
+    @eventguest = Eventguest.new
+    @event_info = Eventguest.new(secondary_params)
     @business_user = current_user.id if current_user
     @event_name = Event.find(params[:event_id]).name
     @guest_name = User.find(params[:user_id]).name
@@ -27,12 +29,13 @@ class EventguestsController < ApplicationController
   # GET /eventguests/1/edit
   def edit
     @eventguest = Eventguest.find(params[:id])
+    @event_info = Eventguest.new(secondary_params)
   end
 
   # POST /eventguests
   # POST /eventguests.json
   def create
-    @eventguest = Eventguest.new(secondary_params)
+    @eventguest = Eventguest.new(eventguest_params)
 
     respond_to do |format|
       if @eventguest.save

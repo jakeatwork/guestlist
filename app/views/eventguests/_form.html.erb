@@ -1,7 +1,7 @@
 <h4>Event:<br>
-  <strong><%= @eventguest.event.name %></strong> on <%= @eventguest.event.date %><br><br>
+  <strong><%= @event_info.event.name %></strong> on <%= @event_info.event.date %><br><br>
   Guest Name:<br>
-  <strong><%= @eventguest.user.name %><%= @guest_photo %></strong><br><br>
+  <strong><%= @event_info.user.name %><%= @guest_photo %></strong><br><br>
 </h4>
 
 <% #TODO: make sure that the venue is listed on the new eventguest page; if the venue isn't in the event name, then it is missing some key information for tour managers as they add guests %>
