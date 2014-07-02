@@ -12,8 +12,18 @@
   <%= f.error_notification %>
 
     <div class="form-inputs">
+
+    <% if params[:event_id].present? %>
     <%= f.hidden_field :event_id, :value => params[:event_id] %>
     <%= f.hidden_field :user_id, :value => params[:user_id] %>
+    <% elsif %>
+    <%= f.hidden_field :event_id, :value => @eventguest.event.id %>
+    <%= f.hidden_field :user_id, :value => @eventguest.user.id %>
+    <% end %>
+
+
+
+
     <%= f.hidden_field :business_user, value: current_user.id %>
     <%= f.association :type, hint: 'VIP, GA, etc...' %>
     <%= f.input :extras, collection: 0...11, hint: "+1, +2, etc..." %>

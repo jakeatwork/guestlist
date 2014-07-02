@@ -77,7 +77,7 @@ class EventguestsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def eventguest_params
-      params.require(:eventguest).permit(:event_id, :user_id, :type_id, :extras, :attended)
+      params.require(:eventguest).permit(:event_id, :user_id, :type_id, :extras, :attended, :notes)
     end
 
     def secondary_params
