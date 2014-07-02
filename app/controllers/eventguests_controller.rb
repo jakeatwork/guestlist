@@ -29,7 +29,7 @@ class EventguestsController < ApplicationController
   # GET /eventguests/1/edit
   def edit
     @eventguest = Eventguest.find(params[:id])
-    @event_info = Eventguest.new(secondary_params)
+    @event_info = Eventguest.find(@eventguest.id)
   end
 
   # POST /eventguests
