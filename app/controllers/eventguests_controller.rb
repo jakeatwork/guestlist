@@ -13,6 +13,7 @@ class EventguestsController < ApplicationController
   # GET /eventguests/1.json
   def show
     @eventguest = Eventguest.find(params[:id])
+    @business_user = User.find(@eventguest.business_user)
   end
 
   # GET /eventguests/new

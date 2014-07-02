@@ -31,6 +31,11 @@
   <%= @eventguest.attended %>
 </p>
 
+<p>
+  <strong>Who added this guest?</strong>
+  <%= @business_user.name %>
+</p>
+
 <%= link_to 'Edit', edit_eventguest_path(@eventguest) %> |
 <%= link_to 'Back', eventguests_path %>
 </div>
