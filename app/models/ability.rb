@@ -9,7 +9,7 @@ class Ability
         can :manage, Eventguest
     elsif user.has_role? :band
         can :manage, User
-    can :read, :all
+    # can :read, :all
     end
 
     #
