@@ -29,11 +29,9 @@
 	<h3><% if user_signed_in? %><%= @user.name %>, <% end %>What would you like to do?</h3>
 	<div class="btn-group">
 		<% if can? :manage, Eventguest %>
-		<%= button_to "Create New List", new_eventguest_path, :class => "btn btn-sm btn-primary", :method => :get %>
-		<br>
 		<%= button_to "View Event Guests", eventguests_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<br>
-		<%= button_to "Check In Guests", eventguests_path, :class => "btn btn-sm btn-primary", :method => :get %>
+		<%= button_to "Check In Guests", events_path, :class => "btn btn-sm btn-primary", :method => :get %>
 		<% end %>
 		<br>
 <% end %>
