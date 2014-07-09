@@ -10,7 +10,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @guests = Eventguest.where(:event_id => params[:id])
+    @guests = Eventguest.where(:event_id => params[:id], attended: "f")
+    @attended = Eventguest.where(:event_id => params[:id], attended: "t")
+    # 
   end
 
   # GET /events/new

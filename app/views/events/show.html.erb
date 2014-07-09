@@ -22,11 +22,22 @@
 </p>
 
 <table class="table table-striped table-hover">
-<thead><strong>Guests:</strong></thead>
+<thead><strong>Check In Guests:</strong></thead>
 <tbody>
  <% @guests.each do |eventguest| %>
       <tr>
         <td><%= check_box "eventguest", "attended", {:checked => eventguest.attended, :disabled => false } %>  <strong><%= eventguest.user.name %></strong> +<%= eventguest.extras %> - <%= eventguest.type.name %> - <strong>Notes:</strong> <%= eventguest.notes %></td>
+      </tr>
+      <% end %>
+      </tbody>
+</table>
+
+<table class="table table-striped table-hover">
+<thead><strong>Already Checked In:</strong></thead>
+<tbody>
+ <% @attended.each do |a| %>
+      <tr>
+        <td><%= check_box "eventguest", "attended", {:checked => a.attended, :disabled => false } %>  <strong><%= a.user.name %></strong> +<%= a.extras %> - <%= a.type.name %> - <strong>Notes:</strong> <%= a.notes %></td>
       </tr>
       <% end %>
       </tbody>
