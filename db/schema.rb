@@ -37,16 +37,6 @@ ActiveRecord::Schema.define(version: 20140627202211) do
     t.datetime "updated_at"
   end
 
-  create_table "lists", force: true do |t|
-    t.integer  "event_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "type_id"
-    t.integer  "number_of_guests"
-    t.boolean  "checked_in"
-  end
-
   create_table "performers", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
